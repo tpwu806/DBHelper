@@ -1,4 +1,4 @@
-package com.sql.data.connect.pool;
+package com.sql.connect.pool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -11,7 +11,7 @@ import java.util.TimerTask;
 import java.util.Vector;
 
 import com.sql.common.bean.DBbean;
-import com.sql.data.connect.base.AbstractConnectionManager;
+import com.sql.connect.base.AbstractConnectionManager;
 
 public class ConnectionPool extends AbstractConnectionManager implements IConnectionPool {
 

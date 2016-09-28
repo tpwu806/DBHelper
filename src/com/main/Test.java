@@ -9,7 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 
 import com.sql.common.bean.DBbean;
-import com.sql.data.connect.C3p0ConnectionManager;
+import com.sql.connect.C3p0ConnectionManager;
 
 public class Test {
 	static Connection conn = null;

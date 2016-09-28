@@ -1,9 +1,9 @@
-package com.sql.data.connect.pool;
+package com.sql.connect.pool;
 
 import java.sql.Connection;  
 import java.sql.SQLException;
 
-import com.sql.data.connect.base.IConnectionBase;  
+import com.sql.connect.base.IConnectionBase;  
   
 public interface IConnectionPool extends IConnectionBase{
 	

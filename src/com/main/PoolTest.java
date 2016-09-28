@@ -1,6 +1,6 @@
 package com.main;
 
-import com.sql.data.connect.pool.IConnectionPool;
+import com.sql.connect.pool.IConnectionPool;
 import com.sql.pool.manager.ConnectionPoolManager;
 import com.sql.pool.manager.ThreadConnection;
 

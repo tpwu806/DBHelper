@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.util.Hashtable;
 
 import com.sql.common.bean.DBbean;
-import com.sql.data.connect.pool.ConnectionPool;
-import com.sql.data.connect.pool.IConnectionPool;  
+import com.sql.connect.pool.ConnectionPool;
+import com.sql.connect.pool.IConnectionPool;  
 /** 
  * 连接管理类 
  * @author Ran 

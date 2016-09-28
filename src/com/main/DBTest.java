@@ -1,7 +1,7 @@
 package com.main;
 
-import com.sql.data.service.DbService;
-import com.sql.data.service.base.IDbServiceBase;
+import com.sql.common.utils.service.DbService;
+import com.sql.common.utils.service.base.IDbServiceBase;
 
 public class DBTest {
 	private static IDbServiceBase dbService = null;
