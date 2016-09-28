@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import com.sql.common.utils.service.base.ADbServiceBase;
 import com.sql.common.utils.service.base.IDbServiceBase;
-import com.sql.connect.base.AbstractConnectionManager;
+import com.sql.connect.base.AbstractConnectionUtil;
 
 
 /**

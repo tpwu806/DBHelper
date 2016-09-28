@@ -30,8 +30,8 @@ public interface IDbServiceBase {
 	 * @param params
 	 * @return
 	 * @throws SQLException: boolean
-	 */
-	boolean executeQuery(String sql,String []params) 
+	 */ 
+	boolean executeQuery(Connection con,String sql,String []params) 
 			throws SQLException;
 	/**
 	 * @Description:增删改

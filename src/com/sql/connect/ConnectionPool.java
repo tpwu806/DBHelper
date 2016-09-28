@@ -11,9 +11,9 @@ import java.util.TimerTask;
 import java.util.Vector;
 
 import com.sql.common.bean.DBbean;
-import com.sql.connect.base.AbstractConnectionManager;
+import com.sql.connect.base.AbstractConnectionUtil;
 
-public class ConnectionPool extends AbstractConnectionManager implements IConnectionPool {
+public class ConnectionPool extends AbstractConnectionUtil implements IConnectionPool {
 
 	// 连接池配置属性
 	private DBbean dbBean;
@@ -27,6 +27,9 @@ public class ConnectionPool extends AbstractConnectionManager implements IConnec
 	// 将线程和连接绑定，保证事务能统一执行
 	private static ThreadLocal<Connection> threadLocal = new ThreadLocal<Connection>();
 
+	private ConnectionPool()throws Exception{
+		
+	}
 	public ConnectionPool(DBbean dbBean) throws Exception {
 		super();
 		this.dbBean = dbBean;

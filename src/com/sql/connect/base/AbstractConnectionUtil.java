@@ -14,7 +14,7 @@ import com.sql.environment.PropertiesFuction;
  * @author wutp 2016年9月22日
  * @version 1.0
  */
-public class AbstractConnectionManager implements IConnectionBase{
+public class AbstractConnectionUtil implements IConnectionBase{
 
 	private Connection con=null;	
 	
@@ -23,7 +23,7 @@ public class AbstractConnectionManager implements IConnectionBase{
 	private String user;
 	private String pwd;	
 
-	public AbstractConnectionManager()throws Exception{
+	public AbstractConnectionUtil()throws Exception{
 		
 	}
 	

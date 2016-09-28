@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.sql.connect.IConnectionPool;
-import com.sql.connect.base.AbstractConnectionManager;
+import com.sql.connect.base.AbstractConnectionUtil;
 
 
 /**
@@ -79,7 +79,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			AbstractConnectionManager.BackPreparedStatement(conn,ps, rs);
+			AbstractConnectionUtil.BackPreparedStatement(conn,ps, rs);
 		}
 		return rs;
 	}
@@ -103,7 +103,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			AbstractConnectionManager.BackPreparedStatement(conn,ps, rs);
+			AbstractConnectionUtil.BackPreparedStatement(conn,ps, rs);
 		}
 		return sum;
 	}
@@ -126,7 +126,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			AbstractConnectionManager.BackPreparedStatement(conn,ps, rs);
+			AbstractConnectionUtil.BackPreparedStatement(conn,ps, rs);
 		}
 		return max;
 	}
@@ -139,7 +139,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 	 * @return String
 	 * @throws SQLException 
 	 */
-	public boolean executeQuery(String sql,String []params) throws SQLException
+	public boolean executeQuery(Connection conn,String sql,String []params) throws SQLException
 	{		
 		boolean confInfo = false;
 		try {
@@ -155,7 +155,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			e.printStackTrace();
 			throw e;		
 		} finally {
-			AbstractConnectionManager.BackPreparedStatement(conn,ps, rs);		
+			AbstractConnectionUtil.BackPreparedStatement(conn,ps, rs);		
 		}
 		return confInfo;		
 	}
@@ -181,7 +181,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			e.printStackTrace();
 			throw e;
 		} finally {
-			AbstractConnectionManager.BackPreparedStatement(conn,ps, null);
+			AbstractConnectionUtil.BackPreparedStatement(conn,ps, null);
 		}
 		return confInfo;		
 	}
@@ -190,11 +190,11 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			ResultSet rs)throws SQLException {	
 		try {
 			if(stmt == null && rs == null)
-				AbstractConnectionManager.BackPreparedStatement(conn);
+				AbstractConnectionUtil.BackPreparedStatement(conn);
 			else if(rs == null)
-				AbstractConnectionManager.BackPreparedStatement(conn,stmt);
+				AbstractConnectionUtil.BackPreparedStatement(conn,stmt);
 			else
-				AbstractConnectionManager.BackPreparedStatement(conn,stmt,rs);
+				AbstractConnectionUtil.BackPreparedStatement(conn,stmt,rs);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
