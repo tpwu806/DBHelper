@@ -11,9 +11,9 @@ public class PoolTest {
         t.start();  
         t.join();  
           
-        ThreadConnection a = new ThreadConnection();  
-        ThreadConnection b = new ThreadConnection();  
-        ThreadConnection c = new ThreadConnection();  
+        ThreadConnection a = new ThreadConnection(0);  
+        ThreadConnection b = new ThreadConnection(1);  
+        ThreadConnection c = new ThreadConnection(2);  
         Thread t1 = new Thread(a);  
         Thread t2 = new Thread(b);  
         Thread t3 = new Thread(c);  

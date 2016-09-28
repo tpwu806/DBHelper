@@ -28,8 +28,8 @@ public class DBbean {
 	private boolean isCurrentConnection = true; // 是否获得当前连接，默认true
 	
 	private boolean isCheakPool = true; // 是否定时检查连接池
-	private long lazyCheck = 1000*60*60;// 延迟多少时间后开始 检查
-	private long periodCheck = 1000*60*60;// 检查频率
+	private long lazyCheck = 1000*60;// 延迟多少时间后开始 检查
+	private long periodCheck = 1000*60;// 检查频率
 	
 	
 	

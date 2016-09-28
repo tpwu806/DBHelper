@@ -9,11 +9,15 @@ import com.sql.connect.IConnectionPool;
  *
  */
 public class ThreadConnection implements Runnable{
+	private int poolId = 1;
 	private IConnectionPool pool;
+	public  ThreadConnection(int poolId){
+		this.poolId += poolId;
+	}
 	@Override
 	public void run() {
 		//System.out.println("ThreadConnection run");
-		pool = ConnectionPoolManager.getInstance().getPool("1Pool");
+		pool = ConnectionPoolManager.getInstance().getPool(String.valueOf(poolId)+"Pool");
 	}
 	
 	public Connection getConnection(){
