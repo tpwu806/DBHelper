@@ -20,19 +20,23 @@ public class ConnectionPoolManager {
       
     // 初始化  
     private ConnectionPoolManager(){  
+    	System.out.println("ConnectionPoolManager ConnectionPoolManager");
         init();  
     }  
     // 单例实现  
     public static ConnectionPoolManager getInstance(){  
+    	System.out.println("ConnectionPoolManager getInstance");
         return Singtonle.instance;  
     }  
-    private static class Singtonle {  
+    private static class Singtonle { 
+    	
         private static ConnectionPoolManager instance =  new ConnectionPoolManager();  
     }  
       
       
     // 初始化所有的连接池  
-    public void init(){  
+    public void init(){
+    	System.out.println("ConnectionPoolManager init");
         for(int i =0;i<DBInitInfo.beans.size();i++){  
             DBbean bean = DBInitInfo.beans.get(i);  
             ConnectionPool pool;
@@ -83,7 +87,8 @@ public class ConnectionPoolManager {
     }  
       
     // 获得连接池  
-    public IConnectionPool getPool(String poolName){  
+    public IConnectionPool getPool(String poolName){ 
+    	System.out.println("ConnectionPoolManager getPool");
         IConnectionPool pool = null;  
         if(pools.size() > 0){  
              pool = pools.get(poolName);  
