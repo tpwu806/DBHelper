@@ -12,12 +12,12 @@ public class ThreadConnection implements Runnable{
 	private IConnectionPool pool;
 	@Override
 	public void run() {
-		System.out.println("ThreadConnection run");
-		pool = ConnectionPoolManager.getInstance().getPool("testPool");
+		//System.out.println("ThreadConnection run");
+		pool = ConnectionPoolManager.getInstance().getPool("1Pool");
 	}
 	
 	public Connection getConnection(){
-		System.out.println("ThreadConnection getConnection");
+		//System.out.println("ThreadConnection getConnection");
 		Connection conn = null;
 		if(pool != null && pool.isActive()){
 			conn = pool.getConnection();
@@ -26,7 +26,7 @@ public class ThreadConnection implements Runnable{
 	}
 	
 	public Connection getCurrentConnection(){
-		System.out.println("ThreadConnection getCurrentConnection");
+		//System.out.println("ThreadConnection getCurrentConnection");
 		Connection conn = null;
 		if(pool != null && pool.isActive()){
 			conn = pool.getCurrentConnecton();

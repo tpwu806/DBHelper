@@ -3,6 +3,7 @@ package com.sql.connect.manager;
 import java.sql.Connection;  
 import java.sql.SQLException;  
 import java.util.Hashtable;
+import java.util.List;
 
 import com.sql.common.bean.DBbean;
 import com.sql.connect.ConnectionPool;
@@ -41,18 +42,21 @@ public class ConnectionPoolManager {
       
     // 初始化所有的连接池  
     public void init() throws Exception{
-    	//System.out.println("ConnectionPoolManager init");
-    	PoolitInfos.addBean(1);
     	
-        for(int i =0;i<PoolitInfos.getBeans().size();i++){  
-            DBbean bean = PoolitInfos.getBeans().get(i);
+    	PoolitInfos.addBean(1);//默认创建一份连接池信息
+    	PoolitInfos.addBean(1);//默认创建一份连接池信息
+    	PoolitInfos.addBean(1);//默认创建一份连接池信息
+    	List<DBbean> beans = PoolitInfos.getBeans();
+    	System.out.println("beans.size() :" + beans.size());
+        for(int i =0;i<beans.size();i++){  
+            DBbean bean = beans.get(i);
     	  
             ConnectionPool pool;
 			try {
 				pool = new ConnectionPool(bean);
 				if(pool != null){  
 	                pools.put(bean.getPoolName(), pool);  
-	                System.out.println("Info:Init connection successed ->" +bean.getPoolName());  
+	                System.out.println("Info:Init connection successed ->PoolName:" +bean.getPoolName());  
 	            } 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -96,10 +100,12 @@ public class ConnectionPoolManager {
       
     // 获得连接池  
     public IConnectionPool getPool(String poolName){ 
-    	//System.out.println("ConnectionPoolManager getPool");
+    	
         IConnectionPool pool = null;  
         if(pools.size() > 0){  
-             pool = pools.get(poolName);  
+             pool = pools.get(poolName); 
+             if(pool!=null)
+            	 System.out.println("ConnectionPoolManager getPool");
         }  
         return pool;  
     }  

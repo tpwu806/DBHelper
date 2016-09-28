@@ -11,7 +11,8 @@ import com.sql.common.bean.DBbean;
  */  
 public class PoolitInfos { 
 	
-	private static List<DBbean> beans = null;
+	private static List<DBbean> beans =  new ArrayList<DBbean>(); 
+	private static int i=0;
 	   
     public static List<DBbean> getBeans() throws Exception {
     	if(beans==null)
@@ -45,8 +46,10 @@ public class PoolitInfos {
      * @param databaseId: void
      * @throws Exception 
      */
-    public static void addBean(int databaseId) throws Exception{  
-    	beans = new ArrayList<DBbean>();          
+    public static void addBean(int databaseId) throws Exception{ 
+    	
+    	System.out.println("add"+"PoolitInfos.addBean(1)");
+    	         
         DBbean bean = PropertiesFuction.getDBbean(databaseId);       
        /* bean.setDriverName("com.mysql.jdbc.Driver");  
         bean.setUrl("jdbc:mysql://192.168.0.121:3306/test");  
@@ -54,9 +57,11 @@ public class PoolitInfos {
         bean.setPassword("123456"); */ 
         
         bean.setMinConnections(5);  
-        bean.setMaxConnections(100);           
-        bean.setPoolName(String.valueOf(databaseId)+"Pool");
-        
+        bean.setMaxConnections(100);
+        String poolname = String.valueOf(databaseId+i)+"Pool";
+        System.out.println("poolname:"+poolname);
+        bean.setPoolName(poolname);
+        i++;
         beans.add(bean);
     }  
 }  

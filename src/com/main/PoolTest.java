@@ -38,7 +38,7 @@ public class PoolTest {
         Thread t = new Thread(new Runnable() {  
             @Override  
             public void run() {
-            	System.out.println("init pool!");
+            	//System.out.println("init pool!");
                 IConnectionPool  pool = initPool();  
                 while(pool == null || !pool.isActive()){  
                     pool = initPool();  
@@ -50,7 +50,7 @@ public class PoolTest {
       
     public static IConnectionPool initPool(){ 
     	//System.out.println("PoolTest initPool");
-        return ConnectionPoolManager.getInstance().getPool("testPool");  
+        return ConnectionPoolManager.getInstance().getPool("1Pool");  
     }  
   
 }  
