@@ -5,8 +5,9 @@ import java.sql.SQLException;
 import java.util.Hashtable;
 
 import com.sql.common.bean.DBbean;
-import com.sql.connect.pool.ConnectionPool;
-import com.sql.connect.pool.IConnectionPool;  
+import com.sql.connect.ConnectionPool;
+import com.sql.connect.IConnectionPool;
+import com.sql.environment.PoolitInfos;  
 /** 
  * 连接管理类 
  * @author Ran 
@@ -21,7 +22,12 @@ public class ConnectionPoolManager {
     // 初始化  
     private ConnectionPoolManager(){  
     	//System.out.println("ConnectionPoolManager ConnectionPoolManager");
-        init();  
+        try {
+			init();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
     }  
     // 单例实现  
     public static ConnectionPoolManager getInstance(){  
@@ -34,10 +40,13 @@ public class ConnectionPoolManager {
       
       
     // 初始化所有的连接池  
-    public void init(){
+    public void init() throws Exception{
     	//System.out.println("ConnectionPoolManager init");
-        for(int i =0;i<DBInitInfo.beans.size();i++){  
-            DBbean bean = DBInitInfo.beans.get(i);  
+    	PoolitInfos.addBean(1);
+    	
+        for(int i =0;i<PoolitInfos.getBeans().size();i++){  
+            DBbean bean = PoolitInfos.getBeans().get(i);
+    	  
             ConnectionPool pool;
 			try {
 				pool = new ConnectionPool(bean);

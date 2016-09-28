@@ -2,7 +2,7 @@ package com.sql.connect.manager;
 
 import java.sql.Connection;
 
-import com.sql.connect.pool.IConnectionPool;
+import com.sql.connect.IConnectionPool;
 /**
  * 模拟线程启动，去获得连接
  * @author Ran

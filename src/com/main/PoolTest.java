@@ -1,8 +1,8 @@
 package com.main;
 
+import com.sql.connect.IConnectionPool;
 import com.sql.connect.manager.ConnectionPoolManager;
 import com.sql.connect.manager.ThreadConnection;
-import com.sql.connect.pool.IConnectionPool;
 
 public class PoolTest {  
     public static void main(String[] args) throws InterruptedException {  

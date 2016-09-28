@@ -1,4 +1,4 @@
-package com.sql.connect.pool;
+package com.sql.connect;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -26,12 +26,6 @@ public class ConnectionPool extends AbstractConnectionManager implements IConnec
 	private List<Connection> activeConnection = new Vector<Connection>();
 	// 将线程和连接绑定，保证事务能统一执行
 	private static ThreadLocal<Connection> threadLocal = new ThreadLocal<Connection>();
-
-	public ConnectionPool() throws Exception {
-		super();
-
-		// TODO Auto-generated constructor stub
-	}
 
 	public ConnectionPool(DBbean dbBean) throws Exception {
 		super();

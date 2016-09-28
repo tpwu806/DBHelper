@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import com.sql.common.bean.DBbean;
+
 /**
  * @Description: 获取数据库配置信息
  * @author wutp 2016年9月24日
@@ -72,6 +74,45 @@ public final class PropertiesFuction {
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
+    }
+    
+    /**
+     * @Description: 获取数据库配置信息
+     * @param id
+     * @throws Exception 
+     */
+    public static DBbean getDBbean(int id) throws Exception{
+    	DBbean bean =new DBbean();
+    	Properties prop = new Properties();
+    	InputStream in = Object.class.getResourceAsStream("/resources/db.properties");   	
+    	try {    		
+    		if(in == null)
+    			throw new Exception("InputStream 读取失败！");
+    		
+    		prop.load(in);
+    		db_type = prop.getProperty("db_type_" + String.valueOf(id)).trim();
+    		url_before = prop.getProperty(db_type + "_url_before").trim();	
+    		ip = prop.getProperty("ip_" + String.valueOf(id)).trim();
+    		port = prop.getProperty("port_" + String.valueOf(id)).trim();
+    		DataBaseName = prop.getProperty("dbname_" + String.valueOf(id)).trim();
+    		
+    		driver = prop.getProperty(db_type + "_driver").trim();
+    		if("sqlserver".equals(db_type))
+    			url = url_before + ip + ":" + port +";DatabaseName="+ DataBaseName;
+    		else
+    			url = url_before + ip + ":" + port +"/"+ DataBaseName;
+    		name = prop.getProperty("user_" + String.valueOf(id)).trim();
+    		pwd = prop.getProperty("pwd_" + String.valueOf(id)).trim();
+    		
+    		bean.setDriverName(driver);
+    		bean.setUrl(url);
+    		bean.setUserName(name);
+    		bean.setPassword(pwd);
+    		
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    	return bean;
     }
 	
 	/**  

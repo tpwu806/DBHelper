@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.sql.connect.IConnectionPool;
 import com.sql.connect.base.AbstractConnectionManager;
-import com.sql.connect.pool.IConnectionPool;
 
 
 /**
