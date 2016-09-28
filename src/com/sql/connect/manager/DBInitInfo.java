@@ -1,4 +1,4 @@
-package com.sql.pool.manager;
+package com.sql.connect.manager;
 
 import java.util.ArrayList;  
 import java.util.List;

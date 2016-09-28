@@ -1,8 +1,8 @@
 package com.main;
 
+import com.sql.connect.manager.ConnectionPoolManager;
+import com.sql.connect.manager.ThreadConnection;
 import com.sql.connect.pool.IConnectionPool;
-import com.sql.pool.manager.ConnectionPoolManager;
-import com.sql.pool.manager.ThreadConnection;
 
 public class PoolTest {  
     public static void main(String[] args) throws InterruptedException {  
@@ -49,7 +49,7 @@ public class PoolTest {
     }  
       
     public static IConnectionPool initPool(){ 
-    	System.out.println("PoolTest initPool");
+    	//System.out.println("PoolTest initPool");
         return ConnectionPoolManager.getInstance().getPool("testPool");  
     }  
   

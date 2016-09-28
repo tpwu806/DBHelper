@@ -64,7 +64,7 @@ public class ConnectionPool extends AbstractConnectionManager implements IConnec
 	// 获得当前连接
 	@Override
 	public Connection getCurrentConnecton() {
-		System.out.println("ConnectionPool getCurrentConnection");
+		//System.out.println("ConnectionPool getCurrentConnection");
 		// 默认线程里面取
 		Connection conn = threadLocal.get();
 		if (!isValid(conn)) {
@@ -76,7 +76,7 @@ public class ConnectionPool extends AbstractConnectionManager implements IConnec
 	// 获得连接
 	@Override
 	public synchronized Connection getConnection() {
-		System.out.println("ConnectionPool getConnection");
+		//System.out.println("ConnectionPool getConnection");
 		Connection conn = null;
 		try {
 			// 判断是否超过最大连接数限制
