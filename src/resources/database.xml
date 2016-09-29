@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<databasebans> 
+	<database id="1">
+		<driver>com.mysql.jdbc.Driver</driver>
+		<url>jdbc:mysql://192.168.0.121:3306/test</url>
+		<name>root</name>
+		<pwd>123456</pwd>
+	</database> 
+	<database id="2" ip="444" port="3306"> 
+		<driver>com.mysql.jdbc.Driver</driver> 
+		<url>jdbc:mysql://192.168.0.121:3306/test</url>
+		<name>root</name>
+		<pwd>000000</pwd>
+	</database> 
+</databasebans>

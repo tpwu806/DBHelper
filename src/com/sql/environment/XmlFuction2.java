@@ -13,12 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-/**
- * @Description: 
- * @author wutp 2016年9月29日
- * @version 1.0
- */
-public class XmlFuction {
+public class XmlFuction2 {
 
 	private static String driver;
 	private static String url;
@@ -34,30 +29,28 @@ public class XmlFuction {
 		System.out.println("pwd: " + pwd);
 	}
 
-	
-	/**
-	 * @Description:
-	 * @auther: wutp 2016年9月29日
-	 * @param databaseId
-	 * @return void
-	 */
 	public static void initXmlBean(int databaseId) {
 		String databaseid = String.valueOf(databaseId);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
-			Document document = builder.parse("src/resources/database.xml");
+			Document document = builder.parse("src/resources/datasource.xml");
 
-			NodeList databaselist = document.getElementsByTagName("database");
-
+			NodeList databaselist = document.getElementsByTagName("DataSource");
 			System.out.println("共有" + databaselist.getLength() + "数据库信息");
-
+			
+			NamedNodeMap dbids = null;
 			for (int i = 0; i < databaselist.getLength(); i++) {
 				Node db = databaselist.item(i);
-				NamedNodeMap dbids = db.getAttributes();
+				System.out.println(db.getNodeName());
+				dbids = db.getAttributes();
+				
 				System.out.println("NamedNodeMap共有" + dbids.getLength() + "节点");
-						
-				for (int j = 0; j < dbids.getLength(); j++) {
+				Node n =  dbids.item(2);
+				Node n2 = n.getFirstChild();
+				String value = n2.getFirstChild().getNodeName();
+				System.out.println(value);
+				/*for (int j = 0; j < dbids.getLength(); j++) {
 					Node bean = dbids.item(j);
 					if (databaseid.equals(bean.getNodeValue())) {
 						NodeList database = db.getChildNodes();
@@ -81,14 +74,15 @@ public class XmlFuction {
 								}
 							}
 						}						
-						/*Element base =(Element)dbids.item(j);
+						Element base =(Element)dbids.item(j);
 						String attrValue=base.getAttribute("name");
 						System.out.println("databasename: "+attrValue);
-						*/
+						
 					}
-				}
+				}*/
 
 			}
+			
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {
