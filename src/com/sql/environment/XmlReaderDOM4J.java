@@ -44,9 +44,11 @@ public class XmlReaderDOM4J {
 
 	private static void parseDOM4J(Document doc) {
 		Element root = doc.getRootElement();
+		System.out.println(root.asXML());
 		for (Iterator<Element> iter = root.elementIterator(); iter.hasNext();) {
 			Element DBConnection = (Element) iter.next();
-			for (Iterator<Element> iter2 = DBConnection.elementIterator(); iter2.hasNext();) {
+			System.out.println("&&&&&&&&&&&&&&&&&&&&&"+DBConnection.asXML());
+			/*for (Iterator<Element> iter2 = DBConnection.elementIterator(); iter2.hasNext();) {
 				Element DataSources = (Element) iter2.next();
 				for (Iterator<Element> iter3 = DataSources.elementIterator(); iter3.hasNext();) {
 					Element DataSource = (Element) iter3.next();
@@ -67,11 +69,12 @@ public class XmlReaderDOM4J {
 				}
 				
 			}
-			
+			*/
 		}
 		
 		
-		// 遍历line结点的所有子节点,也可以使用root.elementIterator()  root.elementIterator("DataSource")
+		// 遍历line结点的所有子节点,也可以使用root.elementIterator("DataSource")
+		//但是必须一级一级
   /*      for (Iterator<Element> iter = root.elementIterator(); iter.hasNext();) {
         	    
             Element element = (Element) iter.next();
