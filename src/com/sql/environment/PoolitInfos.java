@@ -28,7 +28,7 @@ public class PoolitInfos {
 	 * @throws Exception 
 	 */
 	public static DBbean getBean(int databaseId) throws Exception{  
-        DBbean bean = PropertiesFuction.getDBbean(databaseId);    
+        DBbean bean = PropertiesReader.getDBbean(databaseId);    
         bean.setDriverName("com.mysql.jdbc.Driver");  
         bean.setUrl("jdbc:mysql://192.168.0.121:3306/test");  
         bean.setUserName("root");  
@@ -50,7 +50,7 @@ public class PoolitInfos {
     	
     	System.out.println("add"+"PoolitInfos.addBean(1)");
     	         
-        DBbean bean = PropertiesFuction.getDBbean(databaseId);       
+        DBbean bean = PropertiesReader.getDBbean(databaseId);       
        /* bean.setDriverName("com.mysql.jdbc.Driver");  
         bean.setUrl("jdbc:mysql://192.168.0.121:3306/test");  
         bean.setUserName("root");  

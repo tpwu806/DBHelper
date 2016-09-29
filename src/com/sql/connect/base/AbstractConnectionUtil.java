@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.sql.common.tools.StringTools;
-import com.sql.environment.PropertiesFuction;
+import com.sql.environment.PropertiesReader;
 
 /**
  * @Description: 获得Connection
@@ -29,11 +29,11 @@ public class AbstractConnectionUtil implements IConnectionBase{
 	
 	private void getParameter(int id)throws Exception{
 		try {
-			PropertiesFuction.getDbMessage(id);
-			driver = PropertiesFuction.getDriver();
-			url = PropertiesFuction.getUrl();
-			user = PropertiesFuction.getName();
-			pwd = PropertiesFuction.getPwd();
+			PropertiesReader.getDbMessage(id);
+			driver = PropertiesReader.getDriver();
+			url = PropertiesReader.getUrl();
+			user = PropertiesReader.getName();
+			pwd = PropertiesReader.getPwd();
 			if(!StringTools.checkNull(driver,url,user,pwd)){
 				throw new Exception("获取数据库配置文件信息失败！");
 			}					

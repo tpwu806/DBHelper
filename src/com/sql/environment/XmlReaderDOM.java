@@ -18,7 +18,7 @@ import org.xml.sax.SAXException;
  * @author wutp 2016年9月29日
  * @version 1.0
  */
-public class XmlFuction {
+public class XmlReaderDOM {
 
 	private static String driver;
 	private static String url;

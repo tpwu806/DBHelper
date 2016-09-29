@@ -2,9 +2,9 @@ package com.sql.environment;
 
 import java.io.File;
 
-public class FileFuction {
+public class FileReader {
 	
-	private FileFuction(){
+	private FileReader(){
 		
 	}
 	/**

@@ -12,7 +12,7 @@ import com.sql.common.bean.DBbean;
  * @author wutp 2016年9月24日
  * @version 1.0
  */
-public final class PropertiesFuction {
+public final class PropertiesReader {
 	private static final String driver_mysql = "com.mysql.jdbc.Driver";
 	private static final String driver_oracle = "oracle.jdbc.driver.OracleDriver";
 	private static final String driver_sybase = "com.sybase.jdbc2.jdbc.SybDriver";
@@ -118,7 +118,7 @@ public final class PropertiesFuction {
 	/**  
      * 私有构造方法，不需要创建对象  
      */   
-    private PropertiesFuction() {   
+    private PropertiesReader() {   
     }	
 
 	public static String getDriver() {

@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="libs/commons-dbutils-1.6.jar"/>
 	<classpathentry kind="lib" path="libs/mchange-commons-java-0.2.11.jar"/>
 	<classpathentry kind="lib" path="libs/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="libs/jdom.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
