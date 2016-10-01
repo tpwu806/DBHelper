@@ -43,9 +43,9 @@ public class ConnectionPoolManager {
     // 初始化所有的连接池  
     public void init() throws Exception{
     	
-    	PoolitInfos.addBean(1);//默认创建一份连接池信息
-    	PoolitInfos.addBean(1);//默认创建一份连接池信息
-    	PoolitInfos.addBean(1);//默认创建一份连接池信息
+    	PoolitInfos.addBean("");//默认创建一份连接池信息
+    	PoolitInfos.addBean("");//默认创建一份连接池信息
+    	
     	List<DBbean> beans = PoolitInfos.getBeans();
     	System.out.println("beans.size() :" + beans.size());
         for(int i =0;i<beans.size();i++){  
@@ -98,7 +98,14 @@ public class ConnectionPoolManager {
         }  
     }  
       
-    // 获得连接池  
+    
+    /**
+     * @Description:以连接池名字获得连接池  
+     * @auther: wutp 2016年10月1日
+     * @param poolName
+     * @return
+     * @return IConnectionPool
+     */
     public IConnectionPool getPool(String poolName){ 
     	
         IConnectionPool pool = null;  

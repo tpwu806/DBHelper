@@ -1,23 +1,24 @@
-package com.sql.connect.manager;
+package com.main.pool;
 
 import java.sql.Connection;
 
 import com.sql.connect.IConnectionPool;
+import com.sql.connect.manager.ConnectionPoolManagerSingleton;
 /**
  * 模拟线程启动，去获得连接
  * @author Ran
  *
  */
 public class ThreadConnection implements Runnable{
-	private int poolId = 1;
+	private String poolName ;
 	private IConnectionPool pool;
-	public  ThreadConnection(int poolId){
-		this.poolId += poolId;
+	public  ThreadConnection(String poolName){
+		this.poolName = poolName;
 	}
 	@Override
 	public void run() {
 		//System.out.println("ThreadConnection run");
-		pool = ConnectionPoolManager.getInstance().getPool(String.valueOf(poolId)+"Pool");
+		pool = ConnectionPoolManagerSingleton.getInstance().getPool(poolName);
 	}
 	
 	public Connection getConnection(){
