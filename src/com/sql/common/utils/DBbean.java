@@ -1,4 +1,4 @@
-package com.sql.common.bean;
+package com.sql.common.utils;
 
 /**
  * 这是外部可以配置的连接池属性

@@ -2,9 +2,9 @@ package com.main;
 
 import java.sql.Connection;
 
-import com.sql.common.utils.service.DbService;
-import com.sql.common.utils.service.base.IDbServiceBase;
-import com.sql.connect.base.AbstractConnectionUtil;
+import com.sql.common.utils.DbService;
+import com.sql.common.utils.IDbServiceBase;
+import com.sql.connect.AbstractConnectionUtil;
 
 public class DBTest {
 	

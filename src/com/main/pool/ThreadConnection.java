@@ -2,8 +2,8 @@ package com.main.pool;
 
 import java.sql.Connection;
 
+import com.sql.connect.ConnectionPoolManagerSingleton;
 import com.sql.connect.IConnectionPool;
-import com.sql.connect.manager.ConnectionPoolManagerSingleton;
 /**
  * 模拟线程启动，去获得连接
  * @author Ran

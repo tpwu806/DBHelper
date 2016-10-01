@@ -1,8 +1,8 @@
 package com.main.pool;
 
+import com.sql.connect.ConnectionPoolManager;
+import com.sql.connect.ConnectionPoolManagerSingleton;
 import com.sql.connect.IConnectionPool;
-import com.sql.connect.manager.ConnectionPoolManager;
-import com.sql.connect.manager.ConnectionPoolManagerSingleton;
 
 /**
  * @Description:

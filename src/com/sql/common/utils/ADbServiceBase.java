@@ -1,4 +1,4 @@
-package com.sql.common.utils.service.base;
+package com.sql.common.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.sql.connect.AbstractConnectionUtil;
 import com.sql.connect.IConnectionPool;
-import com.sql.connect.base.AbstractConnectionUtil;
 
 
 /**

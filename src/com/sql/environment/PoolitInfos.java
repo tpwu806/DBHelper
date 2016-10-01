@@ -3,7 +3,7 @@ package com.sql.environment;
 import java.util.ArrayList;  
 import java.util.List;
 
-import com.sql.common.bean.DBbean;  
+import com.sql.common.utils.DBbean;  
 /** 
  * 初始化，模拟加载所有的配置文件 
  * @author Ran 

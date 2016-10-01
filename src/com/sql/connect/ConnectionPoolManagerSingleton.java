@@ -1,13 +1,11 @@
-package com.sql.connect.manager;
+package com.sql.connect;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Hashtable;
 import java.util.List;
 
-import com.sql.common.bean.DBbean;
-import com.sql.connect.ConnectionPool;
-import com.sql.connect.IConnectionPool;
+import com.sql.common.utils.DBbean;
 import com.sql.environment.PoolitInfos;
 
 /**

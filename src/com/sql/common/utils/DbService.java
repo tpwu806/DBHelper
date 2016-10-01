@@ -1,13 +1,11 @@
-package com.sql.common.utils.service;
+package com.sql.common.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.sql.common.utils.service.base.ADbServiceBase;
-import com.sql.common.utils.service.base.IDbServiceBase;
-import com.sql.connect.base.AbstractConnectionUtil;
+import com.sql.connect.AbstractConnectionUtil;
 
 
 /**

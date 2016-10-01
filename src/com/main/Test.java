@@ -8,7 +8,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 
-import com.sql.common.bean.DBbean;
+import com.sql.common.utils.DBbean;
 import com.sql.connect.C3p0ConnectionManager;
 
 public class Test {

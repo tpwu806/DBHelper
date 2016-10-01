@@ -1,4 +1,4 @@
-package com.sql.connect.base;
+package com.sql.connect;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.sql.common.tools.StringTools;
+import com.sql.common.utils.StringTools;
 import com.sql.environment.PropertiesReader;
 
 /**
