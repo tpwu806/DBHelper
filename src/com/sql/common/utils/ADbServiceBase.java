@@ -35,6 +35,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			throws SQLException{
 		try {
 			ps=conn.prepareStatement(sql);
+			System.out.println("执行sql: " + sql + "************************");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw e;			
@@ -76,6 +77,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			for(int i=0;i<params.length;i++)			
 				ps.setString(i+1, params[i]);			
 			rs=ps.executeQuery();
+			System.out.println("执行sql: " + sql + "************************");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -98,6 +100,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			for(int i=0;i<params.length;i++)
 				ps.setString(i+1, params[i]);
 			rs=ps.executeQuery();
+			System.out.println("执行sql: " + sql + "************************");
 			if(rs.next())
 				sum=rs.getInt(1);
 		} catch (Exception e) {
@@ -121,6 +124,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 		try {
 			ps=conn.prepareStatement(sql);			
 			rs=ps.executeQuery();
+			System.out.println("执行sql: " + sql + "************************");
 			if(rs.next())
 				max=rs.getString(value);
 		} catch (Exception e) {
@@ -149,6 +153,7 @@ public abstract class ADbServiceBase implements IDbServiceBase{
  				ps.setString(i+1, params[i]);
  			}
 			rs=ps.executeQuery();
+			System.out.println("执行sql: " + sql + "************************");
 			if(rs.next() && rs.getInt(1) >= 1)
 				confInfo = true;			 					
 		} catch (Exception e) {
@@ -176,7 +181,8 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			for(int i=0;i<params.length;i++)
 				ps.setString(i+1, params[i]);
 			if(ps.executeUpdate()==1)
-				confInfo = true;			
+				confInfo = true;
+			System.out.println("执行sql: " + sql + "************************");
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;

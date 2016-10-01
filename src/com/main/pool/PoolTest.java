@@ -54,10 +54,10 @@ public class PoolTest {
 		System.out.println("线程C-> " + c.getConnection());
 		System.out.println("线程D-> " + d.getConnection());
 		
-		/*ThreadCopyDataBaseTheTable copy = new ThreadCopyDataBaseTheTable();
+		ThreadCopyDataBaseTheTable copy = new ThreadCopyDataBaseTheTable();
 		Thread tcopy = new Thread(copy);
 		tcopy.setPriority(10);
-		tcopy.start();*/
+		tcopy.start();
 		
 	}	
 
