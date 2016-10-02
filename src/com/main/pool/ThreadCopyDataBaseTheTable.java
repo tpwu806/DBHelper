@@ -18,10 +18,10 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 
-import com.sql.common.utils.ADbServiceBase;
-import com.sql.common.utils.DbService;
-import com.sql.common.utils.IDbServiceBase;
-import com.sql.common.utils.Test;
+import com.sql.common.utils4j.ADbServiceBase;
+import com.sql.common.utils4j.DbService;
+import com.sql.common.utils4j.IDbServiceBase;
+import com.sql.common.utils4j.Test;
 import com.sql.connect.AbstractConnectionUtil;
 import com.sql.connect.ConnectionPoolManagerSingleton;
 import com.sql.connect.IConnectionPool;

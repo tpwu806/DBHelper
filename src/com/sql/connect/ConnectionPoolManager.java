@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Hashtable;
 import java.util.List;
 
-import com.sql.common.utils.DBbean;
+import com.sql.common.utils4j.DBbean;
 import com.sql.environment.PoolitInfos;  
 /** 
  * 连接管理类 

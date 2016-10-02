@@ -1,4 +1,4 @@
-package com.sql.common.utils;
+package com.sql.common.utils4j;
 
 /**
  * 这是外部可以配置的连接池属性

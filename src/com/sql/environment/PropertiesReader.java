@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import com.sql.common.utils.DBbean;
+import com.sql.common.utils4j.DBbean;
 
 /**
  * @Description: 获取数据库配置信息

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.sql.common.utils.StringTools;
+import com.sql.common.utils4j.StringTools;
 import com.sql.environment.PropertiesReader;
 
 /**

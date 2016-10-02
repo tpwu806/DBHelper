@@ -1,4 +1,4 @@
-package com.sql.common.utils;
+package com.sql.common.utils4j;
 
 /**
  * @Description: 工具类

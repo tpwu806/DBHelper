@@ -8,10 +8,10 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 
-import com.sql.common.utils.DBbean;
+import com.sql.common.utils4j.DBbean;
 import com.sql.connect.C3p0ConnectionManager;
 
-public class Test {
+public class UtilsTest {
 	static Connection conn = null;
 	public static void main(String[] args){
 		testInsert();
@@ -74,8 +74,8 @@ public class Test {
         try {  
             if (null == conn || conn.isClosed())  
                 conn = C3p0ConnectionManager.getConnection();  
-            Test test1Bean = (Test) new QueryRunner().query(conn, SQL,  
-                    new BeanHandler(Test.class));  
+            UtilsTest test1Bean = (UtilsTest) new QueryRunner().query(conn, SQL,  
+                    new BeanHandler(UtilsTest.class));  
             if (null != test1Bean) {  
                 //System.out.println(test1Bean.getUsername());  
                 //System.out.println(test1Bean.getPassword());  

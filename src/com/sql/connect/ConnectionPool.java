@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
 
-import com.sql.common.utils.DBbean;
+import com.sql.common.utils4j.DBbean;
 
 public class ConnectionPool extends AbstractConnectionUtil implements IConnectionPool {
 

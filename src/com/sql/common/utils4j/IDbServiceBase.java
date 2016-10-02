@@ -1,4 +1,4 @@
-package com.sql.common.utils;
+package com.sql.common.utils4j;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
