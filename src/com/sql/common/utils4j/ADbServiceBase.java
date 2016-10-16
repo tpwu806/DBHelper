@@ -3,12 +3,13 @@ package com.sql.common.utils4j;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 
 import com.sql.connect.AbstractConnectionUtil;
 import com.sql.connect.IConnectionPool;
-
 
 /**
  * @Title: DbHelper.java
@@ -80,10 +81,51 @@ public abstract class ADbServiceBase implements IDbServiceBase{
 			System.out.println("执行sql: " + sql + "************************");
 		} catch (Exception e) {
 			e.printStackTrace();
+			throw e;
 		} finally {
 			AbstractConnectionUtil.BackPreparedStatement(conn,ps, rs);
 		}
 		return rs;
+	}
+	
+	// 显示表
+	public Vector[] query(Connection conn,String sql, String[] params) 
+			throws SQLException{
+		// 初始化
+		Vector[] data = new Vector[2];
+		Vector<String> colums = new Vector<String>();
+		Vector<Vector> rows = new Vector<Vector>();
+		// Vector[2] = new Vector[2];
+		// this.colums.add("员工号");
+		// this.colums.add("姓名");
+		// this.colums.add("性别");
+		// this.colums.add("职位");			
+		try {
+			ResultSet rs = getResultSet(conn,sql, params);
+			ResultSetMetaData rsmd = rs.getMetaData();
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				colums.add(rsmd.getColumnName(i + 1));
+			}
+			while (rs.next()) {
+				Vector<String> temp = new Vector<String>();
+				for (int i = 0; i < rsmd.getColumnCount(); i++) {
+					temp.add(rs.getString(i + 1));
+				}
+				rows.add(temp);
+				// temp.add(rs.getString(1));
+				// temp.add(rs.getString(2));
+				// temp.add(rs.getString(3));
+				// temp.add(rs.getString(4));
+			}
+			data[0] = colums;
+			data[1] = rows;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		} finally {
+			AbstractConnectionUtil.BackPreparedStatement(conn,ps, rs);
+		}
+		return data;
 	}
 
 	/**
